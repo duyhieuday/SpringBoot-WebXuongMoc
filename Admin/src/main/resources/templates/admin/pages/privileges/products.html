@@ -1,0 +1,60 @@
+<!--/*@thymesVar id="context" type="com.example.admin.presentation.internalmodel.Context"*/-->
+<!--/*@thymesVar id="users" type="List<User>"*/-->
+<!--/*@thymesVar id="currentPage" type="List<Page<ProductDto>>"*/-->
+<!--/*@thymesVar id="products" type="List<com.example.library.dto.ProductDto>"*/-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="index">
+  <h4 class="fw-bold mb-3">
+    <span class="text-muted fw-light" th:text="${context.title}"></span> /
+  </h4>
+  <div>
+    <form th:action="@{/admin/privileges/products/search-result/0}" method="get">
+      <input type="text" id="search" name="keyword" placeholder="Search products">
+      <button type="submit" class = "btn btn-primary">Search</button>
+    </form>
+  </div>
+  <!-- Page Heading -->
+  <div th:if = "${products.size() == 0}">
+    <p>No products in shop</p>
+  </div>
+  <div th:if = "${success}" class="text-center alert alert-success">
+    <p th:text = "${success}"></p>
+  </div>
+  <div th:if = "${error}" class="text-center alert alert-danger">
+    <p th:text = "${error}"></p>
+  </div>
+  <a class="btn btn-primary" th:href = "@{/admin/privileges/products/add-product}">Add new product</a>
+  <table class="table table-striped" >
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Image</th>
+      <th scope="col">Update</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each ="product : ${products}">
+      <th scope="row" th:text = "${product.name}"></th>
+      <td th:text = "${product.category.name}"></td>
+      <td th:text = "${product.costPrice}"></td>
+      <td th:text = "${product.currentQuantity}"></td>
+      <td><img src="" style="height: 40px; width: 40px;" th:src = "*{'data:image/jpeg;base64,' + {product.image}}"></td>
+      <td><a th:href="@{/admin/privileges/products/update-product/{id} (id = ${product.id})}" class="btn btn-primary">Update</a></td>
+      <td>
+        <a th:if = "${product.activated == false}" th:href="@{/admin/privileges/products/enable-product/{id} (id = ${product.id})}" class="btn btn-warning">Enable</a>
+        <a th:if = "${product.deleted == false}" th:href = "@{/admin/privileges/products/delete-product/{id} (id = ${product.id})}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+</div>
+
+
+</html>

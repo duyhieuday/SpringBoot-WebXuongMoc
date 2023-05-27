@@ -1,0 +1,124 @@
+<!--/*@thymesVar id="context" type="com.aptech.mymusic.presentation.internalmodel.Context"*/-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<aside th:fragment="left_menu" id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme"
+       data-bg-class="bg-menu-theme">
+    <div class="app-brand demo">
+        <a href="/admin/dashboard" class="app-brand-link">
+              <span class="app-brand-logo demo">
+                <img th:src="${context.icon}" width="25" alt="logo">
+              </span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">ɑʑɱєɖɨɑ</span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1 ps">
+        <!-- Dashboard -->
+        <li class="menu-item">
+            <a href="/admin/dashboard" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Dashboard</div>
+            </a>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Musics</span>
+        </li>
+        <li class="menu-item">
+            <a href="/admin/musics/song" class="menu-link">
+                <i class="menu-icon tf-icons bx bxl-deezer"></i>
+                <div data-i18n="Song">Song</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="/admin/musics/ads" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-navigation"></i>
+                <div data-i18n="Advertisement">Advertisement</div>
+            </a>
+        </li>
+
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cube"></i>
+                <div data-i18n="Others">Others</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="/admin/privileges/contacts" class="menu-link">
+                        <div data-i18n="Album">Liên Hệ</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/privileges/products" class="menu-link">
+                        <div data-i18n="Playlist">Product</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/privileges/posts" class="menu-link">
+                        <div data-i18n="Topic">Bài Viết</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/privileges/categories" class="menu-link">
+                        <div data-i18n="Category">Category</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Privileges</span>
+        </li>
+        <li class="menu-item">
+            <a href="/admin/privileges/users" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-user-detail"></i>
+                <div data-i18n="Users">Users</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-vector"></i>
+                <div data-i18n="Access control">Access control</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="/admin/privileges/role" class="menu-link">
+                        <div data-i18n="Ads">Role</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/admin/privileges/permission" class="menu-link">
+                        <div data-i18n="Ads">Permission</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Other</span>
+        </li>
+        <li class="menu-item">
+            <a href="/admin/profile" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="My Profile">My Profile</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a href="/admin/settings" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Settings">Settings</div>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+</body>
+</html>

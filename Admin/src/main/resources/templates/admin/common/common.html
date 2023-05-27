@@ -1,0 +1,83 @@
+<!--/*@thymesVar id="context" type="com.aptech.mymusic.presentation.internalmodel.Context"*/-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      class="light-style layout-menu-fixed"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="/public/admin/assets/"
+      data-template="vertical-menu-template-free">
+<head th:fragment="common_head">
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+
+    <title th:text="${context.titleWithPrefix}"></title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" th:href="${context.icon}"/>
+
+    <!-- Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet"/>
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="/public/admin/assets/vendor/fonts/boxicons.css"/>
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/public/admin/assets/vendor/css/core.css"
+          class="template-customizer-core-css"/>
+    <link rel="stylesheet" href="/public/admin/assets/vendor/css/theme-default.css"
+          class="template-customizer-theme-css"/>
+    <link rel="stylesheet" href="/public/admin/assets/css/demo.css"/>
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"/>
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="/public/admin/assets/vendor/libs/apex-charts/apex-charts.css"/>
+    <link type="text/css" rel="stylesheet" href="/public/admin/assets/vendor/css/pages/page-auth.css"/>
+
+    <!-- Helpers -->
+    <script src="/public/common/js/helpers.js"></script>
+    <script src="/public/admin/assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="/public/admin/assets/js/config.js"></script>
+</head>
+
+<th:block th:fragment="common_body_js">
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="/public/admin/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/public/admin/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/public/admin/assets/vendor/js/bootstrap.js"></script>
+    <script src="/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/public/admin/assets/vendor/js/menu.js"></script>
+    <!-- end build -->
+
+    <!-- Main JS -->
+    <script src="/public/admin/assets/js/main.js"></script>
+
+    <!-- Vendors JS -->
+    <!--<script src="/public/admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>-->
+    <!--<script src="/public/admin/assets/vendor/libs/masonry/masonry.js"></script>-->
+    <!--<script src="/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>-->
+    <!--<script src="/public/admin/assets/vendor/libs/apex-charts/apexcharts.js"></script>-->
+
+    <!-- Page JS -->
+    <!--<script src="/public/admin/assets/js/extended-ui-perfect-scrollbar.js"></script>-->
+    <!--<script src="/public/admin/assets/js/form-basic-inputs.js"></script>-->
+    <!--<script src="/public/admin/assets/js/dashboards-analytics.js"></script>-->
+    <!--<script src="/public/admin/assets/js/pages-account-settings-account.js"></script>-->
+    <!--<script src="/public/admin/assets/js/ui-modals.js"></script>-->
+    <!--<script src="/public/admin/assets/js/ui-toasts.js"></script>-->
+    <!--<script src="/public/admin/assets/js/ui-popover.js"></script>-->
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script src="/public/admin/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script async defer src="/public/admin/assets/vendor/js/buttons.js"></script>
+</th:block>
+
+</html>

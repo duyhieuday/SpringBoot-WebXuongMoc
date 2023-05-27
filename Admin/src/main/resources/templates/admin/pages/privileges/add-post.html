@@ -1,0 +1,52 @@
+<!--/*@thymesVar id="context" type="com.aptech.mymusic.presentation.internalmodel.Context"*/-->
+<!--/*@thymesVar id="categories" type="List<com.example.library.model.Category>"*/-->
+<!--/*@thymesVar  type="com.example.library.model.TinTuc"*/-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="index">
+  <h4 class="fw-bold mb-3">
+    <span class="text-muted fw-light" th:text="${context.title}"></span> /
+  </h4>
+  <form class="form-horizontal" th:action="@{/admin/privileges/posts/save-post}" method="post" enctype="multipart/form-data" th:object = "${tintuc}">
+    <fieldset>
+      <!-- Form Name -->
+      <legend>ADD POSTS</legend>
+
+      <!-- Text input-->
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="description">POST TITLE </label>
+        <div class="col-md-4">
+          <input id="title" th:field = "*{title}" name="description" class="form-control input-md" required="" type="text">
+
+        </div>
+      </div>
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="description">POST DESCRIPTION </label>
+        <div class="col-md-4">
+          <input id="description" th:field = "*{description}" name="description" class="form-control input-md" required="" type="text">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+
+      <!-- Text input-->
+      <!-- Text input-->
+      <div class="form-group">
+        <div class="col-md-4">
+          <!-- File Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="imageProduct">Image Product</label>
+            <div class="col-md-4">
+              <input id="imageProduct" name="imageProduct" class="input-file" type="file">
+            </div>
+          </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+
+</html>

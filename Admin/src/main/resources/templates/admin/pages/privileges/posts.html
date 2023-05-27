@@ -1,0 +1,40 @@
+<!--/*@thymesVar id="context" type="com.example.admin.presentation.internalmodel.Context"*/-->
+<!--/*@thymesVar id="tintucs" type="List<com.example.library.model.TinTuc>"*/-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="index">
+    <h4 class="fw-bold mb-3">
+        <span class="text-muted fw-light" th:text="${context.title}"></span> /
+    </h4>
+    <a class="btn btn-primary" th:href = "@{/admin/privileges/posts/add-post}">Add new post</a>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Description</th>
+            <th>Functions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="tintuc : ${posts}">
+            <tr>
+                <td th:text="${tintuc.id}">ID</td>
+                <td th:text="${tintuc.title}">Title</td>
+                <td><img src="" style="height: 40px; width: 40px;" th:src = "*{'data:image/jpeg;base64,' + {tintuc.image}}"></td>
+                <td th:text="${tintuc.description}">Description</td>
+                <td>
+                    <a class="h4 mr-3" th:href="@{/admin/privileges/posts/update-post/{id} (id = ${tintuc.id})}">Edit</a>
+                    <a class="h4" th:href="@{'/admin/privileges/posts/delete/' + ${tintuc.id}}">Delete</a>
+                </td>
+            </tr>
+        </th:block>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+</html>

@@ -1,0 +1,15 @@
+<!--/*@thymesVar id="context" type="com.aptech.mymusic.presentation.internalmodel.Context"*/-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      lang="en"
+      class="light-style"
+      data-assets-path="/public/admin/assets/">
+
+<head th:include="admin/common/common::common_head"></head>
+
+<body>
+<th:block th:include="${context.content.layout}::${context.content.name}"></th:block>
+<th:block th:include="admin/common/common::common_body_js"></th:block>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+<!--/*@thymesVar id="context" type="com.aptech.mymusic.presentation.internalmodel.Context"*/-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title th:text="${context.titleWithPrefix}"></title>
+    <link th:href="${context.icon}" rel="icon"/>
+</head>
+
+<div th:fragment="index">
+    <h1>Hello Spring Boot!</h1>
+</div>
+
+</html>
